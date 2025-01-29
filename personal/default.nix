@@ -7,16 +7,27 @@ let
     fzf # selector from heaven
     fd # file finder
     ripgrep # fast searcher
-    git # source control
     neovim # the best vim
     vscode # visual goto
     tmux # screen replacement
+    # dotfile manager I could get rid of in the long run
+    rcm
   ];
-  languages = with pkgs; [
-    python3
-    rustc
-    cargo
+  development = with pkgs; [
+    # environments and stuff
+    direnv
+    # FIXME: nobody wants to use this if you could use nix
+    mise
+    # python
+    python3 # don't pretend python 2 is getting anywhere near close
+    # rust
+    rustc # toolchain
+    cargo # tools for power
+    # go
     go
+    # git and stuff
+    git # source control
+    gh # github
   ];
 in
 {
@@ -24,10 +35,8 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
     corePackages
-    ++ languages
+    ++ development
     ++ [
-      # dotfile manager I could get rid of in the long run
-      pkgs.rcm
     ];
 
   imports = [
