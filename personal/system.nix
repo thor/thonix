@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   # Allow touch ID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
@@ -16,10 +15,8 @@
 
     # Enable keyboard remapping
     keyboard.enableKeyMapping = true;
-
-    # Remap Caps Lock to Escape
-    # NOTE: this did not work as expected
-    keyboard.remapCapsLockToControl = true;
+    # (actually) remap Caps Lock to Escape
+    keyboard.remapCapsLockToEscape = true;
 
     defaults = {
       # Hide the dock automatically
