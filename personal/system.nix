@@ -30,6 +30,7 @@
       dock.persistent-apps = [
         "/System/Cryptexes/App/System/Applications/Safari.app"
         "/System/Applications/Utilities/Terminal.app"
+        "/Applications/Nix Apps/iTerm2.app"
         "/Applications/Bitwarden.app"
       ];
 
