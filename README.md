@@ -1,12 +1,11 @@
-thor and nix: *thonix*
-======================
+# thor and nix: _thonix_
 
-Such great fun, all provided in *one* repository.
+Such great fun, all provided in _one_ repository.
 
 This is my weird adventure on a journey to understand how Nix, Nix, Nix, and Nix, all interact together in different ways.
 Stable? Experimental? Who cares! It's all fun and games in the context of the de facto stabilised.
 
-The configuration as provided in this repository provide a *flake* for usage with `nix-darwin`, and potentially `home-manager`.
+The configuration as provided in this repository provide a _flake_ for usage with `nix-darwin`, and potentially `home-manager`.
 
 ## Getting started
 
