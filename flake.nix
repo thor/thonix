@@ -2,11 +2,28 @@
   description = "lincoln-golf system flake";
 
   inputs = {
+    # the core packages
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # the macOS experience
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     # sort out the formatting
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    # homebrew and declarative taps
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
   };
 
   outputs =
@@ -16,6 +33,8 @@
       nixpkgs,
       systems,
       treefmt-nix,
+      nix-homebrew,
+      ...
     }:
     let
       # Small tool to iterate over each systems
@@ -60,9 +79,11 @@
 
       # for `darwin-rebuild build --flake .#lincoln-golf`
       darwinConfigurations."lincoln-golf" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           ./work
           ./personal
+          nix-homebrew.darwinModules.nix-homebrew
           configuration
         ];
       };
