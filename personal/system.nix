@@ -25,8 +25,7 @@
       dock.mru-spaces = false;
       # Specify the persistent apps in the Dock
       dock.persistent-apps = [
-        "/System/Cryptexes/App/System/Applications/Safari.app"
-        "/System/Applications/Utilities/Terminal.app"
+        "/Applications/Google Chrome.app"
         "/Applications/Nix Apps/iTerm2.app"
         "/Applications/Bitwarden.app"
       ];
