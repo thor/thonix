@@ -12,6 +12,8 @@ let
     tmux # screen replacement
     # dotfile manager I could get rid of in the long run
     rcm
+    # nix
+    nix-search-cli
   ];
   development = with pkgs; [
     # environments and stuff
