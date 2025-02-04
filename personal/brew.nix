@@ -5,7 +5,7 @@
   ...
 }:
 {
-	# Setup relevant homebrew packages
+  # Setup relevant homebrew packages
   homebrew = {
     enable = true;
 
@@ -16,8 +16,8 @@
     # interoperability with nix-homebrew
     taps = builtins.attrNames config.nix-homebrew.taps;
 
-		# casks are configured elsewhere
-	};
+    # casks are configured elsewhere
+  };
 
   nix-homebrew = {
     enable = true;

@@ -41,6 +41,11 @@ in
     ++ [
     ];
 
+  homebrew.casks = [
+    "todoist"
+    "messenger" # facebook messenger
+  ];
+
   imports = [
     ./brew.nix
     ./system.nix
