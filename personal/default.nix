@@ -42,6 +42,7 @@ in
     ];
 
   imports = [
+    ./brew.nix
     ./system.nix
     ./ux.nix
   ];
