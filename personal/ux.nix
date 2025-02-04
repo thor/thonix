@@ -7,6 +7,12 @@ in
 {
   # Setup my fants
   fonts.packages = fonts;
+
+  # brew casks
+  homebrew.casks = [
+    "scroll-reverser"
+  ];
+
   environment.systemPackages = with pkgs; [
     # app starter which is much more useful than spotlight
     raycast
