@@ -13,7 +13,9 @@ let
     # dotfile manager I could get rid of in the long run
     rcm
     # nix
-    nix-search-cli
+    nix-search-cli # better search
+    nixd # beautiful linking
+    nixfmt-rfc-style # formatting for nixd
   ];
   development = with pkgs; [
     # environments and stuff

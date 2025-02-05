@@ -1,12 +1,12 @@
-{ pkgs, ... }:
+{ ... }:
 {
   # Allow touch ID for sudo authentication
   security.pam.enableSudoTouchIdAuth = true;
 
   # Set a reasonable timeout for sudo
   security.sudo.extraConfig = ''
-    		Defaults timestamp_timeout=60
-    		'';
+    Defaults timestamp_timeout=60
+  '';
 
   # Enable the built-in OpenSSH server
   services.openssh.enable = true;
