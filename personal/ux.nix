@@ -18,5 +18,7 @@ in
     raycast
     # friendly terminal improvement
     iterm2
+    # windows-style alt-tabbing
+    alt-tab-macos
   ];
 }
