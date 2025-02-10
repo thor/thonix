@@ -12,6 +12,7 @@ let
     tmux # screen replacement
     # dotfile manager I could get rid of in the long run
     rcm
+    sheldon # source and fetch zsh plugins
     # nix
     nix-search-cli # better search
     nixd # beautiful linking
