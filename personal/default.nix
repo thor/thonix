@@ -53,6 +53,8 @@ in
   homebrew.casks = [
     "todoist" # tasks
     "messenger" # facebook messenger
+    "chatgpt" # just another llm
+    "anki" # how to learn
   ];
 
   # pin some apps
