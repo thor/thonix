@@ -1,17 +1,17 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
 {
   # nix packages
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     # source control
-    pkgs.git
+    git
     # communication tool
-    pkgs.slack
+    slack
+    # yummy python
+    pipx
   ];
 
   # brew formulae and casks
