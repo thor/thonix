@@ -51,9 +51,17 @@ in
     ];
 
   homebrew.casks = [
-    "todoist"
+    "todoist" # tasks
     "messenger" # facebook messenger
   ];
+
+  # pin some apps
+  system.defaults = {
+    dock.persistent-apps = [
+      "/Applications/Todoist.app"
+      "/Applications/Messenger.app"
+    ];
+  };
 
   imports = [
     ./brew.nix
