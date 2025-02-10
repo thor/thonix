@@ -37,6 +37,9 @@ let
     gh # github
     lazygit # tui for git
   ];
+  services = with pkgs; [
+    maestral # files, I need them
+  ];
 in
 {
   # List packages installed in system profile. To search by name, run:
