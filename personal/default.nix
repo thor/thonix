@@ -47,6 +47,7 @@ in
   environment.systemPackages =
     corePackages
     ++ development
+    ++ services
     ++ [
     ];
 
