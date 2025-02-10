@@ -33,6 +33,7 @@ let
     # git and stuff
     git # source control
     gh # github
+    lazygit # tui for git
   ];
 in
 {
