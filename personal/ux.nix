@@ -1,7 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, lib, ... }:
 let
   fonts = with pkgs; [
     fantasque-sans-mono
+    nerd-fonts.fantasque-sans-mono
   ];
 in
 {
