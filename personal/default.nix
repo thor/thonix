@@ -6,6 +6,7 @@ let
     thefuck # fuck
     fzf # selector from heaven
     fd # file finder
+    parallel # run in parallel
     ripgrep # fast searcher
     neovim # the best vim
     vscode # visual goto
