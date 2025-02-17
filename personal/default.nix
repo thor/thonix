@@ -26,8 +26,11 @@ let
     direnv
     # FIXME: nobody wants to use this if you could use nix
     mise
+    # js
+    nodejs
     # python
     python3 # don't pretend python 2 is getting anywhere near close
+    uv
     # rust
     rustc # toolchain
     cargo # tools for power
