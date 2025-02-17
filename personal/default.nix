@@ -3,6 +3,7 @@ let
   corePackages = with pkgs; [
     # core utilities
     bat # bats are better than cats
+    delta # pretty good looking diffs
     thefuck # fuck
     fzf # selector from heaven
     fd # file finder
