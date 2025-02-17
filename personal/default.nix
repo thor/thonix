@@ -43,6 +43,7 @@ let
   ];
   services = with pkgs; [
     maestral # files, I need them
+    discord # ooof not actually irc
   ];
 in
 {
