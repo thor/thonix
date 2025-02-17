@@ -23,6 +23,8 @@ let
     nixfmt-rfc-style # formatting for nixd
   ];
   development = with pkgs; [
+    # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
+    cmake
     # environments and stuff
     direnv
     # FIXME: nobody wants to use this if you could use nix
