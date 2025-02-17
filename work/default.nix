@@ -17,6 +17,12 @@
     # yummy python
     pipx
     # general good infra stuff
+    kubectl
+    kubectl-explore
+    kubectx
+    k9s
+    k3d
+    kind
     terraform
     terraform-lsp
     terraform-docs
@@ -25,7 +31,9 @@
     grafana-alloy
     grizzly
     # mandatory google
-    google-cloud-sdk
+    (google-cloud-sdk.withExtraComponents (
+      with google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]
+    ))
     google-cloud-sql-proxy
   ];
 
