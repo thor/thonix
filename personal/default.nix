@@ -48,12 +48,7 @@ in
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    corePackages
-    ++ development
-    ++ services
-    ++ [
-    ];
+  environment.systemPackages = corePackages ++ development ++ services;
 
   homebrew.casks = [
     "todoist" # tasks
