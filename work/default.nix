@@ -54,6 +54,7 @@
   system.defaults = {
     dock.persistent-apps = [
       "/Applications/Slack.app"
+      "/Applications/Linear.app"
     ];
   };
 }
