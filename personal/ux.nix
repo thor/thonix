@@ -25,6 +25,12 @@ in
     jankyborders
   ];
 
+  launchd.user.agents.scroll-reverser = {
+    command = "'/Applications/Scroll Reverser.app/Contents/MacOS/Scroll Reverser'";
+    serviceConfig.KeepAlive = true;
+    serviceConfig.ProcessType = "Interactive";
+  };
+
   services.yabai = {
     enable = true;
     enableScriptingAddition = true;
