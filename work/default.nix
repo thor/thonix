@@ -37,9 +37,16 @@
     google-cloud-sql-proxy
   ];
 
-  # brew formulae and casks
+  # brew brews and casks
+  homebrew.brews = [
+    "podman"
+    "podman-compose"
+    "docker"
+    "docker-compose"
+  ];
   homebrew.casks = [
     "linear-linear"
+    "podman-desktop"
   ];
 
   system.defaults = {
