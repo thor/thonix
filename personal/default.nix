@@ -12,6 +12,8 @@ let
     neovim # the best vim
     vscode # visual goto
     tmux # screen replacement
+    # web and stuff
+    httpie
     # dotfile manager I could get rid of in the long run
     rcm
     sheldon # source and fetch zsh plugins
