@@ -1,5 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
+  inherit (lib) mkIf;
+  inherit (pkgs.stdenv) isDarwin;
   corePackages = with pkgs; [
     # core utilities
     bat # bats are better than cats
@@ -57,7 +59,7 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages = corePackages ++ development ++ services;
 
-  homebrew.casks = [
+  homebrew.casks = mkIf isDarwin [
     "todoist" # tasks
     "messenger" # facebook messenger
     "chatgpt" # just another llm
@@ -65,7 +67,7 @@ in
   ];
 
   # pin some apps
-  system.defaults = {
+  system.defaults = mkIf isDarwin {
     dock.persistent-apps = [
       "/Applications/Todoist.app"
       "/Applications/Messenger.app"
