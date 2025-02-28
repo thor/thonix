@@ -39,6 +39,9 @@
     google-cloud-sql-proxy
   ];
 
+  # Enable beautiful direnv
+  programs.direnv.enable = true;
+
   # brew brews and casks
   homebrew.brews = [
     "podman"

@@ -59,6 +59,9 @@ in
   # $ nix-env -qaP | grep wget
   environment.systemPackages = corePackages ++ development ++ services;
 
+  # Enable beautiful direnv
+  programs.direnv.enable = true;
+
   homebrew.casks = mkIf isDarwin [
     "todoist" # tasks
     "messenger" # facebook messenger
