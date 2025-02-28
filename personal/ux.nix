@@ -68,8 +68,8 @@ in
     skhdConfig = ''
       # h, t, n, s
       alt - h : yabai -m window --focus west
-      alt - t : yabai -m window --focus south
-      alt - n : yabai -m window --focus north
+      alt - t : yabai -m window --focus south; yabai -m window --focus stack.next
+      alt - n : yabai -m window --focus north; yabai -m window --focus stack.prev
       alt - s : yabai -m window --focus east
 
       # spaces
