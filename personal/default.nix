@@ -64,6 +64,8 @@ in
     "messenger" # facebook messenger
     "chatgpt" # just another llm
     "anki" # how to learn
+    "wifiman" # handy to get home
+    "remarkable" # access to the tablet
   ];
 
   # pin some apps
