@@ -79,6 +79,9 @@ in
       ctrl - 4 : yabai -m space --focus 4
       ctrl - 5 : yabai -m space --focus 5
       ctrl - 6 : yabai -m space --focus 6
+      ctrl - 7 : yabai -m space --focus 7
+      ctrl - 8 : yabai -m space --focus 8
+      ctrl - 9 : yabai -m space --focus 9
 
       # move windows
       lalt + shift - h : yabai -m window --swap west
