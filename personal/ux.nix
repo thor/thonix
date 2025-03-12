@@ -94,10 +94,10 @@ in
       lalt + shift - space : yabai -m window --toggle float
 
       # moving between monitors
-      hyper - h : yabai -m space --display west
-      hyper - t : yabai -m space --display south
-      hyper - n : yabai -m space --display north
-      hyper - s : yabai -m space --display east
+      hyper - h : yabai -m space --display prev
+      hyper - t : yabai -m space --display last
+      hyper - n : yabai -m space --display first
+      hyper - s : yabai -m space --display next
     '';
   };
 }
