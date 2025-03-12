@@ -48,6 +48,7 @@
     "podman-compose"
     "docker"
     "docker-compose"
+    "helm"
   ];
   homebrew.casks = [
     "linear-linear"
