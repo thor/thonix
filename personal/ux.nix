@@ -59,9 +59,6 @@ in
       # mouse interaction mode
       yabai -m config mouse_modifier alt
 
-      # flash windows on focus change
-      yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.9 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
-
       # run jankyborders and configure it
       borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on &
     '';
