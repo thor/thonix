@@ -35,6 +35,10 @@ in
     enable = true;
     enableScriptingAddition = true;
     extraConfig = ''
+      # load scripting additions
+      yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+      sudo yabai --load-sa
+
       # managed, bsp, float
       yabai -m config layout bsp
       yabai -m config window_opacity_duration 0.04
