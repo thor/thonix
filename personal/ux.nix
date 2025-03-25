@@ -84,6 +84,20 @@ in
       ctrl - 8 : yabai -m space --focus 8
       ctrl - 9 : yabai -m space --focus 9
 
+      # spaces
+      shift + lalt - 1 : yabai -m window --space 1; yabai -m space --focus 1
+      shift + lalt - 2 : yabai -m window --space 2; yabai -m space --focus 2
+      shift + lalt - 3 : yabai -m window --space 3; yabai -m space --focus 3
+      shift + lalt - 4 : yabai -m window --space 4; yabai -m space --focus 4
+      shift + lalt - 5 : yabai -m window --space 5; yabai -m space --focus 5
+      shift + lalt - 6 : yabai -m window --space 6; yabai -m space --focus 6
+      shift + lalt - 7 : yabai -m window --space 7; yabai -m space --focus 7
+      shift + lalt - 8 : yabai -m window --space 8; yabai -m space --focus 8
+      shift + lalt - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
+      # rebalance
+      shift + alt - 0 : yabai -m space --balance
+
       # move windows
       lalt + shift - h : yabai -m window --swap west
       lalt + shift - t : yabai -m window --swap south
