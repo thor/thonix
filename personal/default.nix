@@ -16,6 +16,7 @@ let
     tmux # screen replacement
     # web and stuff
     httpie
+    mtr
     # dotfile manager I could get rid of in the long run
     rcm
     sheldon # source and fetch zsh plugins
