@@ -72,6 +72,7 @@ in
     "anki" # how to learn
     "wifiman" # handy to get home
     "remarkable" # access to the tablet
+    "nordvpn" # it is what it is
   ];
 
   # pin some apps
