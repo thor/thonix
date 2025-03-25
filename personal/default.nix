@@ -43,6 +43,8 @@ let
     # rust
     rustc # toolchain
     cargo # tools for power
+    clippy # lintyness 
+    rustfmt # formatting yeeaaaah
     # go
     go
     # git and stuff
