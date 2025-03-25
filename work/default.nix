@@ -30,6 +30,9 @@
     grafana-loki
     grafana-alloy
     grizzly
+    jsonnet
+    jsonnet-bundler
+    jsonnet-language-server
     # workflows
     argo
     # mandatory google
