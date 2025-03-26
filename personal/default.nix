@@ -87,5 +87,6 @@ in
     ./brew.nix
     ./system.nix
     ./ux.nix
+    ./dev.nix
   ];
 }

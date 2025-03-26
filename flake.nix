@@ -10,6 +10,12 @@
     # sort out the formatting
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
+    # rust
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # homebrew and declarative taps
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-core = {
@@ -33,6 +39,7 @@
       nixpkgs,
       systems,
       treefmt-nix,
+      fenix,
       nix-homebrew,
       ...
     }:
@@ -66,6 +73,9 @@
 
           # Allow unfree software (choo-choo)
           nixpkgs.config.allowUnfree = true;
+
+          # Add oversays
+          nixpkgs.overlays = [ fenix.overlays.default ];
         };
     in
     {
@@ -79,7 +89,7 @@
 
       # for `darwin-rebuild build --flake .#lincoln-golf`
       darwinConfigurations."lincoln-golf" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs ; };
         modules = [
           ./work
           ./personal
