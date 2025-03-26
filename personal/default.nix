@@ -41,10 +41,7 @@ let
     python3 # don't pretend python 2 is getting anywhere near close
     uv
     # rust
-    rustc # toolchain
-    cargo # tools for power
-    clippy # lintyness 
-    rustfmt # formatting yeeaaaah
+    rustup
     # go
     go
     # git and stuff
