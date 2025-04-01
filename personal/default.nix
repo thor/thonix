@@ -48,6 +48,8 @@ let
     git # source control
     gh # github
     lazygit # tui for git
+    # network and fun
+    cloudflared
   ];
   services = with pkgs; [
     maestral # files, I need them
