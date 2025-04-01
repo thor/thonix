@@ -40,8 +40,6 @@ let
     # python
     python3 # don't pretend python 2 is getting anywhere near close
     uv
-    # rust
-    rustup
     # go
     go
     # git and stuff
@@ -86,6 +84,6 @@ in
     ./brew.nix
     ./system.nix
     ./ux.nix
-    ./dev.nix
+    ./rust.nix
   ];
 }
