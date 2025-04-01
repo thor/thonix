@@ -28,6 +28,9 @@ let
     nixfmt-rfc-style # formatting for nixd
   ];
   development = with pkgs; [
+    # not really development, but ansible will do, too
+    ansible
+    ansible-language-server
     # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
     cmake
     protobuf # protobuf
