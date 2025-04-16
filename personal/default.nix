@@ -40,6 +40,7 @@ let
     mise
     # js
     nodejs
+    pnpm
     # python
     python3 # don't pretend python 2 is getting anywhere near close
     uv
