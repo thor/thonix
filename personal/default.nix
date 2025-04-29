@@ -30,7 +30,8 @@ let
   ];
   development = with pkgs; [
     # not really development, but ansible will do, too
-    ansible
+    # Disabled due to NixOS/nixpkgs#400373
+    # ansible
     ansible-language-server
     # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
     cmake
@@ -66,6 +67,10 @@ in
 
   # Enable beautiful direnv
   programs.direnv.enable = true;
+
+  homebrew.brews = mkIf isDarwin [
+    "ansible" # temporarily while broken see NixOS/nixpkgs#400373
+  ];
 
   homebrew.casks = mkIf isDarwin [
     "todoist" # tasks
