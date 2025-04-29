@@ -72,6 +72,9 @@ in
 
       # run jankyborders and configure it
       borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on &
+
+      # update raycast menubar
+      yabai -m signal --add event=space_changed action="nohup open -g raycast://extensions/krzysztoff1/yabai/screens-menu-bar?launchType=background > /dev/null 2>&1 &"
     '';
   };
 
