@@ -7,6 +7,7 @@ let
     bat # bats are better than cats
     delta # pretty good looking diffs
     thefuck # fuck
+    eza # ls replacement
     fzf # selector from heaven
     fd # file finder
     parallel # run in parallel
