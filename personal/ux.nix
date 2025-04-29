@@ -50,6 +50,17 @@ in
       yabai -m config left_padding   10
       yabai -m config right_padding  10
 
+      # labels
+      yabai -m space 1 --label cmd
+      yabai -m space 2 --label web
+      yabai -m space 3 --label com
+      yabai -m space 4 --label mda
+      yabai -m space 5 --label pri
+      yabai -m space 6 --label 6
+      yabai -m space 7 --label 7
+      yabai -m space 8 --label wrk
+      yabai -m space 9 --label priv
+
       # disable things
       yabai -m rule --add app='System..innstillinger' manage=off
 
@@ -83,6 +94,7 @@ in
       ctrl - 7 : yabai -m space --focus 7
       ctrl - 8 : yabai -m space --focus 8
       ctrl - 9 : yabai -m space --focus 9
+      ctrl - 0 : yabai -m space --focus 10
 
       # spaces
       shift + lalt - 1 : yabai -m window --space 1; yabai -m space --focus 1
@@ -94,9 +106,7 @@ in
       shift + lalt - 7 : yabai -m window --space 7; yabai -m space --focus 7
       shift + lalt - 8 : yabai -m window --space 8; yabai -m space --focus 8
       shift + lalt - 9 : yabai -m window --space 9; yabai -m space --focus 9
-
-      # rebalance
-      shift + alt - 0 : yabai -m space --balance
+      shift + lalt - 0 : yabai -m window --space 9; yabai -m space --focus 10
 
       # move windows
       lalt + shift - h : yabai -m window --swap west
@@ -106,12 +116,29 @@ in
 
       # go float
       lalt + shift - space : yabai -m window --toggle float
+      # sticky window
+      cmd + shift + alt - s : yabai -m window --toggle sticky
 
       # moving between monitors
       hyper - h : yabai -m space --display prev
       hyper - t : yabai -m space --display last
       hyper - n : yabai -m space --display first
       hyper - s : yabai -m space --display next
+
+      # rebalance
+      cmd + shift + alt - b : yabai -m space --balance
+
+      # lean and clean, no gap machine
+      cmd + shift + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+      # sort-of fullscreen (options: zoom-parent, zoom-fullscreen, native-fullscreen)
+      cmd + shift + alt - f : yabai -m window --toggle zoom-parent
+      cmd + shift + ctrl - f : yabai -m window --toggle zoom-fullscreen
+
+      # toggle yabai layout
+      cmd + shift + alt - l : [ "$(yabai -m query --spaces --space | jq -r .type)" = "bsp" ] \
+                              && yabai -m space --layout float \
+                              || yabai -m space --layout bsp
     '';
   };
 }
