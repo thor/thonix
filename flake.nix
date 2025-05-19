@@ -65,6 +65,10 @@
           # $ darwin-rebuild changelog
           system.stateVersion = 6;
 
+          # Used for nix-darwin to temporarily target the primary user as it moves to
+          # first-class multi-user support.
+          system.primaryUser = "thor";
+
           # Who am I?
           networking.hostName = "lincoln-golf";
 
