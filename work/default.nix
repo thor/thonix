@@ -33,6 +33,7 @@
     jsonnet
     jsonnet-bundler
     jsonnet-language-server
+    tanka
     # workflows
     argo
     # mandatory google
