@@ -12,6 +12,8 @@ in
   # brew casks
   homebrew.casks = [
     "scroll-reverser"
+    # delightful little temporary note app
+    "antinote"
   ];
 
   environment.systemPackages = with pkgs; [
