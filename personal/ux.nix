@@ -65,6 +65,7 @@ in
 
       # disable things
       yabai -m rule --add app='System..innstillinger' manage=off
+      yabai -m rule --add app='Antinote' manage=off
 
       # gaps
       yabai -m space --padding 10
