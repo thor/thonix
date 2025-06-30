@@ -83,14 +83,6 @@ in
     "parallels" # virtual machines
   ];
 
-  # pin some apps
-  system.defaults = mkIf isDarwin {
-    dock.persistent-apps = [
-      "/Applications/Todoist.app"
-      "/Applications/Messenger.app"
-    ];
-  };
-
   imports = [
     ./brew.nix
     ./system.nix

@@ -28,6 +28,8 @@
         "/Applications/Google Chrome.app"
         "/Applications/Nix Apps/iTerm2.app"
         "/Applications/Bitwarden.app"
+        "/Applications/Todoist.app"
+        "/Applications/Messenger.app"
       ];
 
       finder = {
