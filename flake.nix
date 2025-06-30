@@ -77,9 +77,6 @@
 
           # Allow unfree software (choo-choo)
           nixpkgs.config.allowUnfree = true;
-
-          # Add oversays
-          nixpkgs.overlays = [ fenix.overlays.default ];
         };
     in
     {
