@@ -22,8 +22,7 @@
   nix-homebrew = {
     enable = true;
 
-    # TODO: replace username with a dynamic expression
-    user = "thor";
+    user = config.system.primaryUser;
 
     # see homebrew.taps
     taps = {
