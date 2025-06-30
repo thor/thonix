@@ -63,19 +63,19 @@
       darwinConfigurations."lincoln-golf" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
+          ./configurations/darwin/lincoln-golf.nix
           ./work
           ./personal
           nix-homebrew.darwinModules.nix-homebrew
-          ./configurations/darwin/lincoln-golf.nix
         ];
       };
 
       darwinConfigurations."lincoln-foxtrot" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
+          ./configurations/darwin/lincoln-foxtrot.nix
           ./personal
           nix-homebrew.darwinModules.nix-homebrew
-          ./configurations/darwin/lincoln-foxtrot.nix
         ];
       };
     };
