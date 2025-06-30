@@ -6,7 +6,7 @@ let
     # core utilities
     bat # bats are better than cats
     delta # pretty good looking diffs
-    thefuck # fuck
+    pay-respects # fuck with suggestions
     eza # ls replacement
     fzf # selector from heaven
     fd # file finder
@@ -76,6 +76,7 @@ in
     "iterm2" # terminal emulator
     "google-chrome" # browser most of the time
     "todoist" # tasks
+    "todoist-app" # tasks
     "messenger" # facebook messenger
     "chatgpt" # just another llm
     "anki" # how to learn
