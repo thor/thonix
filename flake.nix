@@ -48,7 +48,6 @@
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
-
     in
     {
       # for `nix fmt`
@@ -70,6 +69,7 @@
         ];
       };
 
+      # for `darwin-rebuild build --flake .#lincoln-foxtrot`
       darwinConfigurations."lincoln-foxtrot" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
         modules = [
