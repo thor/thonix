@@ -73,6 +73,8 @@ in
   ];
 
   homebrew.casks = mkIf isDarwin [
+    "iterm2" # terminal emulator
+    "google-chrome" # browser most of the time
     "todoist" # tasks
     "messenger" # facebook messenger
     "chatgpt" # just another llm
