@@ -50,6 +50,7 @@ let
     go
     # git and stuff
     git # source control
+    jujutsu # source control, but different
     gh # github
     lazygit # tui for git
     # network and fun
@@ -59,11 +60,14 @@ let
     maestral # files, I need them
     discord # ooof not actually irc
   ];
+  llm = with pkgs; [
+    gemini-cli # open source cli with gemini access and mcp
+  ];
 in
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = corePackages ++ development ++ services;
+  environment.systemPackages = corePackages ++ development ++ services ++ llm;
 
   # Enable beautiful direnv
   programs.direnv.enable = true;
