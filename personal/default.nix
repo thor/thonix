@@ -92,6 +92,7 @@ in
 
   imports = [
     ./brew.nix
+    ./llm.nix
     ./system.nix
     ./ux.nix
     ./rust.nix
