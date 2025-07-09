@@ -52,12 +52,15 @@ let
     # git and stuff
     git # source control
     jujutsu # source control, but different
+    jjui # delicious
     gh # github
     lazygit # tui for git
     # network and fun
     cloudflared
   ];
   services = with pkgs; [
+    rbw # bitwarden cli client
+    pinentry_mac # runtime dependency of rbw
     maestral # files, I need them
     discord # ooof not actually irc
     # steam # some entertainment necessary
