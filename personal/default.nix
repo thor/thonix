@@ -76,12 +76,12 @@ in
 
   homebrew.brews = mkIf isDarwin [
     "ansible" # temporarily while broken see NixOS/nixpkgs#400373
+    "winetricks" # wine baby
   ];
 
   homebrew.casks = mkIf isDarwin [
     "iterm2" # terminal emulator
     "google-chrome" # browser most of the time
-    "todoist" # tasks
     "todoist-app" # tasks
     "messenger" # facebook messenger
     "chatgpt" # just another llm
@@ -90,6 +90,8 @@ in
     "remarkable" # access to the tablet
     "nordvpn" # it is what it is
     "parallels" # virtual machines
+    "wine@staging" # wine baby
+    "steam" # some entertainment, yeah?
   ];
 
   imports = [
