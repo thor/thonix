@@ -59,15 +59,13 @@ let
   services = with pkgs; [
     maestral # files, I need them
     discord # ooof not actually irc
-  ];
-  llm = with pkgs; [
-    gemini-cli # open source cli with gemini access and mcp
+    # steam # some entertainment necessary
   ];
 in
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = corePackages ++ development ++ services ++ llm;
+  environment.systemPackages = corePackages ++ development ++ services;
 
   # Enable beautiful direnv
   programs.direnv.enable = true;
