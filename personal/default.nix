@@ -27,6 +27,7 @@ let
     nix-search-cli # better search
     nixd # beautiful linking
     nixfmt-rfc-style # formatting for nixd
+    nix-index # local database
   ];
   development = with pkgs; [
     # not really development, but ansible will do, too
