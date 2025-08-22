@@ -52,6 +52,7 @@ let
     # git and stuff
     git # source control
     jujutsu # source control, but different
+    watchman # jujutsu: helpful file monitor
     jjui # delicious
     gh # github
     lazygit # tui for git
