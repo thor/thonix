@@ -17,6 +17,7 @@
     # yummy python
     pipx
     # general good infra stuff
+    docker-buildx
     kubectl
     kubectl-explore
     kubectx
@@ -41,6 +42,8 @@
       with google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]
     ))
     google-cloud-sql-proxy
+    # other utilities
+    _1password-cli
   ];
 
   # Enable beautiful direnv
