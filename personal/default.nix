@@ -93,6 +93,7 @@ in
     "parallels" # virtual machines
     "wine@staging" # wine baby
     "steam" # some entertainment, yeah?
+    "calibre" # books god damn
   ];
 
   imports = [
