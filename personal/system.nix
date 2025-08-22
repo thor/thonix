@@ -2,6 +2,7 @@
 {
   # Allow touch ID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.reattach = true;
 
   # Set a reasonable timeout for sudo
   security.sudo.extraConfig = ''
