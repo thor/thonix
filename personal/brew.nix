@@ -29,6 +29,7 @@
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
       "homebrew/homebrew-bundle" = inputs.homebrew-bundle;
+      "Kegworks-App/homebrew-kegworks" = inputs.kegworks;
     };
 
     # taps can no longer be added imperatively with `brew tap`.

@@ -30,6 +30,10 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
+    kegworks = {
+      url = "github:Kegworks-App/homebrew-kegworks";
+      flake = false;
+    };
   };
 
   outputs =

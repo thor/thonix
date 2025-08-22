@@ -14,6 +14,7 @@ in
     "scroll-reverser"
     # delightful little temporary note app
     "antinote"
+    "Kegworks-App/kegworks/kegworks"
   ];
 
   environment.systemPackages = with pkgs; [
