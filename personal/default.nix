@@ -37,6 +37,7 @@ let
     # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
     cmake
     protobuf # protobuf
+    watch # not the best, but need it
     # environments and stuff
     direnv
     # FIXME: nobody wants to use this if you could use nix
@@ -52,6 +53,7 @@ let
     # git and stuff
     git # source control
     jujutsu # source control, but different
+    gnupg # signature verifications
     watchman # jujutsu: helpful file monitor
     jjui # delicious
     gh # github
