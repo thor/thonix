@@ -3,12 +3,14 @@
 
   inputs = {
     # the core packages
+    # Pinned to c0780d221c27ea0c486794b2bc30b3a0b007b6ee for the time
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     # the macOS experience
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     # sort out the formatting
     treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # rust
     fenix = {
