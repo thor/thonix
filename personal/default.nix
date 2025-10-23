@@ -95,6 +95,7 @@ in
     "wine@staging" # wine baby
     "steam" # some entertainment, yeah?
     "calibre" # books god damn
+    "obsidian" # notes to replace dendron
   ];
 
   imports = [
