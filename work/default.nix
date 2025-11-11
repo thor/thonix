@@ -36,7 +36,7 @@
     jsonnet-language-server
     tanka
     # workflows
-    argo
+    argo-workflows
     # mandatory google
     (google-cloud-sdk.withExtraComponents (
       with google-cloud-sdk.components; [ gke-gcloud-auth-plugin ]
