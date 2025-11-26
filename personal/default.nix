@@ -65,6 +65,7 @@ let
     pinentry_mac # runtime dependency of rbw
     maestral # files, I need them
     discord # ooof not actually irc
+    signal-desktop-bin # chats
     # steam # some entertainment necessary
   ];
 in
