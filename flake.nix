@@ -54,6 +54,14 @@
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+
+      commonModules = [
+        ./personal 
+        nix-homebrew.darwinModules.nix-homebrew
+      ];
+      workModules = commonModules ++ [
+        ./work
+      ];
     in
     {
       # for `nix fmt`
@@ -67,21 +75,24 @@
       # for `darwin-rebuild build --flake .#lincoln-golf`
       darwinConfigurations."lincoln-golf" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
-        modules = [
+        modules = workModules ++ [
           ./configurations/darwin/lincoln-golf.nix
-          ./work
-          ./personal
-          nix-homebrew.darwinModules.nix-homebrew
+        ];
+      };
+
+      # for `darwin-rebuild build --flake .#lincoln-hotel`
+      darwinConfigurations."lincoln-hotel" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs self; };
+        modules = workModules ++ [
+          ./configurations/darwin/lincoln-hotel.nix
         ];
       };
 
       # for `darwin-rebuild build --flake .#lincoln-foxtrot`
       darwinConfigurations."lincoln-foxtrot" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs self; };
-        modules = [
+        modules = commonModules ++ [
           ./configurations/darwin/lincoln-foxtrot.nix
-          ./personal
-          nix-homebrew.darwinModules.nix-homebrew
         ];
       };
     };
