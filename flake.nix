@@ -57,6 +57,7 @@
 
       commonModules = [
         ./personal
+        ./darwin/keyboard-layout.nix
         nix-homebrew.darwinModules.nix-homebrew
       ];
       workModules = commonModules ++ [
