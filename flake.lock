@@ -86,22 +86,6 @@
         "type": "github"
       }
     },
-    "kegworks": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1755132769,
-        "narHash": "sha256-SN1PrxawrvkOGe9LYBWsb/o9ae+rd7E1xVtGEumUw5c=",
-        "owner": "Kegworks-App",
-        "repo": "homebrew-kegworks",
-        "rev": "f40f3149ea598ec4fedd052c8784dc1b3b0a2694",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Kegworks-App",
-        "repo": "homebrew-kegworks",
-        "type": "github"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -163,10 +147,10 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
-        "kegworks": "kegworks",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
+        "sikarugir": "sikarugir",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"
       }
@@ -185,6 +169,22 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "sikarugir": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1755132769,
+        "narHash": "sha256-SN1PrxawrvkOGe9LYBWsb/o9ae+rd7E1xVtGEumUw5c=",
+        "owner": "Sikarugir-App",
+        "repo": "homebrew-sikarugir",
+        "rev": "f40f3149ea598ec4fedd052c8784dc1b3b0a2694",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Sikarugir-App",
+        "repo": "homebrew-sikarugir",
         "type": "github"
       }
     },

@@ -105,5 +105,6 @@ in
     ./system.nix
     ./ux.nix
     ./rust.nix
+    ./wine.nix
   ];
 }

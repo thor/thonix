@@ -32,8 +32,8 @@
       url = "github:homebrew/homebrew-bundle";
       flake = false;
     };
-    kegworks = {
-      url = "github:Kegworks-App/homebrew-kegworks";
+    sikarugir = {
+      url = "github:Sikarugir-App/homebrew-sikarugir";
       flake = false;
     };
   };
@@ -56,7 +56,7 @@
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
 
       commonModules = [
-        ./personal 
+        ./personal
         nix-homebrew.darwinModules.nix-homebrew
       ];
       workModules = commonModules ++ [
