@@ -23,4 +23,8 @@
 
   # Allow unfree software (choo-choo)
   nixpkgs.config.allowUnfree = true;
+
+  # Configure my keyboard
+  # TODO: Use a better namespace than 'custom' for the options
+  custom.keyboard.layout = ./resources/NorwegianTvorak.bundle;
 }
