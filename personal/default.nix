@@ -65,7 +65,6 @@ let
     pinentry_mac # runtime dependency of rbw
     maestral # files, I need them
     discord # ooof not actually irc
-    signal-desktop-bin # chats
     # steam # some entertainment necessary
   ];
 in
@@ -97,6 +96,7 @@ in
     "steam" # some entertainment, yeah?
     "calibre" # books god damn
     "obsidian" # notes to replace dendron
+    "signal" # chats
   ];
 
   imports = [
