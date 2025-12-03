@@ -39,7 +39,7 @@ let
     watch # not the best, but need it
     # environments and stuff
     direnv
-    # FIXME: nobody wants to use this if you could use nix
+    # whether nix or not, use mise for projects where non-nixers exist
     mise
     # js
     nodejs
