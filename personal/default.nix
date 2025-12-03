@@ -62,7 +62,7 @@ let
   ];
   services = with pkgs; [
     rbw # bitwarden cli client
-    pinentry_mac # runtime dependency of rbw
+    pinentry-tty # runtime dependency of rbw
     maestral # files, I need them
     discord # ooof not actually irc
     # steam # some entertainment necessary
