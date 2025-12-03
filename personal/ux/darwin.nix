@@ -1,20 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 let
-  fonts = with pkgs; [
-    fantasque-sans-mono
-    nerd-fonts.fantasque-sans-mono
-  ];
+  inherit (pkgs.stdenv) isDarwin;
 in
-{
-  # Setup my fants
-  fonts.packages = fonts;
-
+lib.mkIf isDarwin {
   # brew casks
   homebrew.casks = [
     "scroll-reverser"
     # delightful little temporary note app
     "antinote"
-    "sikarugir"
   ];
 
   environment.systemPackages = with pkgs; [

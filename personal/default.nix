@@ -104,7 +104,7 @@ in
     ./brew.nix
     ./llm.nix
     ./system.nix
-    ./ux.nix
+    ./ux
     ./rust.nix
     ./wine.nix
   ];
