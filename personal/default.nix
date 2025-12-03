@@ -62,6 +62,7 @@ let
   ];
   services = with pkgs; [
     rbw # bitwarden cli client
+    bitwarden-cli # another cli client
     pinentry-tty # runtime dependency of rbw
     maestral # files, I need them
     discord # ooof not actually irc
@@ -99,6 +100,10 @@ in
     "obsidian" # notes to replace dendron
     "signal" # chats
   ];
+
+  homebrew.masApps = mkIf isDarwin {
+    Bitwarden = 1352778147;
+  };
 
   imports = [
     ./brew.nix
