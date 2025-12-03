@@ -93,6 +93,7 @@ in
     "nordvpn" # it is what it is
     "parallels" # virtual machines
     "wine@staging" # wine baby
+    "gstreamer-runtime" # wine dependency that doesn't bubble up
     "steam" # some entertainment, yeah?
     "calibre" # books god damn
     "obsidian" # notes to replace dendron
