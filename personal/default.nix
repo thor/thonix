@@ -60,6 +60,10 @@ let
     # network and fun
     cloudflared
   ];
+  docs = [
+    tex
+  ];
+
   services = with pkgs; [
     rbw # bitwarden cli client
     bitwarden-cli # another cli client
@@ -68,11 +72,29 @@ let
     discord # ooof not actually irc
     # steam # some entertainment necessary
   ];
+
+  # Add a custom tex package
+  tex = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-medium
+        dvisvgm
+        dvipng # for preview and export as html
+        wrapfig
+        amsmath
+        ulem
+        hyperref
+        capt-of
+        ;
+      #(setq org-latex-compiler "lualatex")
+      #(setq org-preview-latex-default-process 'dvisvgm)
+    }
+  );
 in
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = corePackages ++ development ++ services;
+  environment.systemPackages = corePackages ++ development ++ services ++ docs;
 
   # Enable beautiful direnv
   programs.direnv.enable = true;
