@@ -108,7 +108,6 @@ in
     "iterm2" # terminal emulator
     "google-chrome" # browser most of the time
     "todoist-app" # tasks
-    "messenger" # facebook messenger
     "chatgpt" # just another llm
     "anki" # how to learn
     "wifiman" # handy to get home
