@@ -123,7 +123,9 @@ in
   ];
 
   homebrew.masApps = mkIf isDarwin {
-    Bitwarden = 1352778147;
+    "Bitwarden" = 1352778147;
+    # networking
+    "Wireguard" = 1451685025;
   };
 
   imports = [
