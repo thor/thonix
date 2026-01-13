@@ -127,6 +127,7 @@ in
     "calibre" # books god damn
     "obsidian" # notes to replace dendron
     "signal" # chats
+    "rescuetime" # tracking my own time usage (and productivity)
   ];
 
   homebrew.masApps = mkIf isDarwin {
