@@ -108,6 +108,7 @@ in
   homebrew.brews = mkIf isDarwin [
     "ansible" # temporarily while broken see NixOS/nixpkgs#400373
     "winetricks" # wine baby
+    "mas" # search and install apps from the macOS App Store
   ];
 
   homebrew.casks = mkIf isDarwin [
