@@ -7,5 +7,9 @@
 
   nix.linux-builder.enable = true;
 
-  nix.settings.trusted-users = [ "root" "@wheel" "@admin" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+    "@admin"
+  ];
 }

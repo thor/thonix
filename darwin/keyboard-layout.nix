@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   inherit (lib) mkOption types;
@@ -14,7 +19,7 @@ in
     system.activationScripts.postActivation.text = lib.mkForce ''
       TRACKING_FILE="/var/db/.nix-custom-keyboard-layout-installed"
       TARGET_DIR="/Library/Keyboard Layouts"
-      
+
       # The nix store path includes a hash, e.g., /nix/store/...-my.keylayout or ...-my.bundle
       # We want to install it as just "my.keylayout" or "my.bundle"
       # basename gives us "hash-my.keylayout"
@@ -30,7 +35,7 @@ in
            fi
         fi
       fi
-      
+
       ${lib.optionalString (config.custom.keyboard.layout != null) ''
         echo "Setting up custom keyboard layout: $CLEAN_NAME" >&2
 

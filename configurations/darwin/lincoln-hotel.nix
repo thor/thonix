@@ -9,5 +9,9 @@
   nix.enable = false;
   nix.linux-builder.enable = false;
 
-  nix.settings.trusted-users = [ "root" "@wheel" "@admin" ];
+  nix.settings.trusted-users = [
+    "root"
+    "@wheel"
+    "@admin"
+  ];
 }

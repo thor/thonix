@@ -14,8 +14,14 @@ pkgs.rustPlatform.buildRustPackage rec {
   cargoHash = "sha256-3pBP8ZgKiKnE6fK4a9IVR67br33ktsmB5ofwTyy95wA=";
 
   # Build the spr crate specifically
-  cargoBuildFlags = [ "-p" "jj-spr" ];
-  cargoTestFlags = [ "-p" "jj-spr" ];
+  cargoBuildFlags = [
+    "-p"
+    "jj-spr"
+  ];
+  cargoTestFlags = [
+    "-p"
+    "jj-spr"
+  ];
 
   nativeBuildInputs = [ pkgs.pkg-config ];
 
