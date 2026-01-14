@@ -86,6 +86,22 @@
         "type": "github"
       }
     },
+    "krunkit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1763132646,
+        "narHash": "sha256-Rws3/IOj5gQ/I/D6OuwHR4nNhXpgu16oPEI67+cmw3w=",
+        "owner": "slp",
+        "repo": "homebrew-krunkit",
+        "rev": "28b39e55b683818bb3e5a04b1e833522f78d467d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "slp",
+        "repo": "homebrew-krunkit",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -147,6 +163,7 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "krunkit": "krunkit",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",

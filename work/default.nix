@@ -51,8 +51,6 @@
 
   # brew brews and casks
   homebrew.brews = [
-    "podman"
-    "podman-compose"
     "docker"
     "docker-compose"
     "helm"
@@ -71,4 +69,8 @@
       "/Applications/Linear.app"
     ];
   };
+
+  imports = [
+    ./podman.nix
+  ];
 }
