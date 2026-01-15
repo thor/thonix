@@ -5,11 +5,14 @@ in
 lib.mkIf isDarwin {
   # brew casks
   homebrew.casks = [
+    # make mice scroll "normally" instead of "naturally"
     "scroll-reverser"
     # delightful little temporary note app
     "antinote"
     # support a little stack thing
     "hammerspoon"
+    # hide the notch
+    "topnotch"
   ];
 
   environment.systemPackages = with pkgs; [
@@ -83,8 +86,8 @@ lib.mkIf isDarwin {
     skhdConfig = ''
       # h, t, n, s
       alt - h : yabai -m window --focus west
-      alt - t : yabai -m window --focus south; yabai -m window --focus stack.next
-      alt - n : yabai -m window --focus north; yabai -m window --focus stack.prev
+      alt - t : yabai -m window --focus stack.next || yabai -m window --focus south
+      alt - n : yabai -m window --focus stack.prev || yabai -m window --focus north
       alt - s : yabai -m window --focus east
 
       # spaces
@@ -119,14 +122,14 @@ lib.mkIf isDarwin {
 
       # go float
       lalt + shift - space : yabai -m window --toggle float
-      # sticky window
-      cmd + shift + alt - s : yabai -m window --toggle sticky
+      # sticky window (f for follow)
+      hyper - s : yabai -m window --toggle sticky
 
       # moving between monitors
-      hyper - h : yabai -m space --display prev
-      hyper - t : yabai -m space --display last
-      hyper - n : yabai -m space --display first
-      hyper - s : yabai -m space --display next
+      hyper - left : yabai -m space --display prev
+      # hyper - t : yabai -m space --display last
+      # hyper - n : yabai -m space --display first
+      hyper - right : yabai -m space --display next
 
       # rebalance
       cmd + shift + alt - b : yabai -m space --balance
@@ -138,10 +141,12 @@ lib.mkIf isDarwin {
       cmd + shift + alt - f : yabai -m window --toggle zoom-parent
       cmd + shift + ctrl - f : yabai -m window --toggle zoom-fullscreen
 
-      # toggle yabai layout
-      cmd + shift + alt - l : [ "$(yabai -m query --spaces --space | jq -r .type)" = "bsp" ] \
-                              && yabai -m space --layout float \
-                              || yabai -m space --layout bsp
+      # toggle layout for the current space between bsp and float
+      cmd + shift + alt - f : yabai -m space --layout "$(yabai -m query --spaces --space \
+                              | jq -r 'if .type == "bsp" then "float" else "bsp" end')"
+
+      # toggle layout for the current window between bsp and stack
+      cmd + shift + alt - s : yabai -m window --stack next 
     '';
   };
 }
