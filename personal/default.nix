@@ -78,7 +78,6 @@ let
     bitwarden-cli # another cli client
     pinentry-tty # runtime dependency of rbw
     maestral # files, I need them
-    discord # ooof not actually irc
     # steam # some entertainment necessary
   ];
 
@@ -115,6 +114,7 @@ in
   ];
 
   homebrew.casks = mkIf isDarwin [
+    "discord" # ooof not actually irc
     "iterm2" # terminal emulator
     "google-chrome" # browser most of the time
     "todoist-app" # tasks
