@@ -8,6 +8,8 @@ lib.mkIf isDarwin {
     "scroll-reverser"
     # delightful little temporary note app
     "antinote"
+    # support a little stack thing
+    "hammerspoon"
   ];
 
   environment.systemPackages = with pkgs; [
