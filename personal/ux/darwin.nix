@@ -66,6 +66,7 @@ lib.mkIf isDarwin {
       yabai -m rule --add app='System..innstillinger' manage=off
       yabai -m rule --add app='Parallels Desktop' manage=off
       yabai -m rule --add app='Antinote' manage=off
+      yabai -m rule --add role='AXWindow' app='Google.*Chrome' title='Bitwarden.*' manage=off label=bitwarden
 
       # gaps
       yabai -m space --padding 10
