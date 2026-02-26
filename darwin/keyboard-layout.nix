@@ -23,7 +23,16 @@ in
       # The nix store path includes a hash, e.g., /nix/store/...-my.keylayout or ...-my.bundle
       # We want to install it as just "my.keylayout" or "my.bundle"
       # basename gives us "hash-my.keylayout"
-      CLEAN_NAME=$(basename "${toString config.custom.keyboard.layout}")
+      ${
+        if config.custom.keyboard.layout != null then
+          ''
+            CLEAN_NAME=$(basename "${config.custom.keyboard.layout}")
+          ''
+        else
+          ''
+            CLEAN_NAME=""
+          ''
+      }
 
       # 1. Clean up old layout if the name changed
       if [ -f "$TRACKING_FILE" ]; then
