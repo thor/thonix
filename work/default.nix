@@ -24,6 +24,7 @@
     k9s
     k3d
     kind
+    kustomize
     terraform
     terraform-lsp
     terraform-docs
@@ -54,6 +55,7 @@
     "docker"
     "docker-compose"
     "helm"
+    "mcpm" # attempt at handling multiple mcps
   ];
   homebrew.casks = [
     "linear-linear"
