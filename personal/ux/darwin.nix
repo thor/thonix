@@ -63,9 +63,15 @@ lib.mkIf isDarwin {
       yabai -m space 9 --label priv
 
       # disable things
+      ## not possible to resize properly
       yabai -m rule --add app='System..innstillinger' manage=off
+      ## annoying to resize a vm
       yabai -m rule --add app='Parallels Desktop' manage=off
+      ## tiny note stickers should be over 'em all
       yabai -m rule --add app='Antinote' manage=off
+      ## native tabs only
+      yabai -m rule --add app='Ghostty' manage=off
+      ## password manager pop-up
       yabai -m rule --add role='AXWindow' app='Google.*Chrome' title='Bitwarden.*' manage=off label=bitwarden
 
       # gaps
