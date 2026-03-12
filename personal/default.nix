@@ -145,6 +145,7 @@ in
 
   imports = [
     ./brew.nix
+    ./development.nix
     ./llm.nix
     ./system.nix
     ./ux
