@@ -92,10 +92,10 @@ lib.mkIf isDarwin {
     enable = true;
     skhdConfig = ''
       # h, t, n, s
-      alt - h : yabai -m window --focus west
+      alt - h : yabai -m query --windows --window west && yabai -m window --focus west || yabai -m display --focus west
       alt - t : yabai -m window --focus stack.next || yabai -m window --focus south
       alt - n : yabai -m window --focus stack.prev || yabai -m window --focus north
-      alt - s : yabai -m window --focus east
+      alt - s : yabai -m query --windows --window east && yabai -m window --focus east || yabai -m display --focus east
 
       # spaces
       ctrl - 1 : yabai -m space --focus 1
