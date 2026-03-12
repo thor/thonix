@@ -24,6 +24,8 @@ let
     mtr
     # dotfile manager I could get rid of in the long run
     rcm
+    # all about the theming
+    tinty
     sheldon # source and fetch zsh plugins
     # archives
     keka
@@ -116,6 +118,8 @@ in
   homebrew.casks = mkIf isDarwin [
     "discord" # ooof not actually irc
     "iterm2" # terminal emulator
+    "ghostty" # terminal emulator with speed
+    "cmux" # native tmux based on libghostty
     "google-chrome" # browser most of the time
     "todoist-app" # tasks
     "chatgpt" # just another llm
