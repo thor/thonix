@@ -1,6 +1,23 @@
-{ lib, pkgs, ... }:
 {
-  # Enable dnsmasq for local development
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  inherit (pkgs.stdenv) isDarwin;
+  primary = config.system.primaryUser;
+  # Editable overrides: dnsmasq format, one entry per line, e.g. address=/my.dev/127.0.0.1
+  userAddressesConf = "/Users/${primary}/.config/dnsmasq/dev-adresses.conf";
+  dnsmasqDeveloperConf = pkgs.writeText "dnsmasq-development.conf" ''
+    no-resolv
+    port=5554
+    listen-address=127.0.0.1
+    conf-file=${userAddressesConf}
+  '';
+in
+{
+  # Enable dnsmasq for local development (system instance; provides the shared package).
   services.dnsmasq = {
     enable = true;
     addresses = {
@@ -11,10 +28,29 @@
 
   # macOS uses /etc/resolver/<domain> files for per-domain DNS servers.
   # This is for local testing where I point it to external addresses, too.
-  environment.etc = lib.mkIf pkgs.stdenv.isDarwin {
+  environment.etc = lib.mkIf isDarwin {
     "resolver/test".text = ''
       nameserver 127.0.0.1
       port 5554
     '';
   };
+
+  launchd.user.agents.dnsmasq-developer = lib.mkIf isDarwin {
+    command = "${config.services.dnsmasq.package}/bin/dnsmasq --keep-in-foreground --conf-file=${dnsmasqDeveloperConf}";
+    serviceConfig = {
+      KeepAlive = true;
+      RunAtLoad = true;
+    };
+  };
+
+  # system.activationScripts.postActivation.text = lib.mkIf isDarwin (
+  #   lib.mkAfter ''
+  #     ADDR_FILE="${userAddressesConf}"
+  #     ${pkgs.coreutils}/bin/install -d -o ${primary} -g staff "$(dirname "$ADDR_FILE")"
+  #     if [ ! -f "$ADDR_FILE" ]; then
+  #       printf '%s\n' '# address=/example.dev/127.0.0.1' > "$ADDR_FILE"
+  #       ${pkgs.coreutils}/bin/chown ${primary}:staff "$ADDR_FILE"
+  #     fi
+  #   ''
+  # );
 }
