@@ -113,6 +113,7 @@ in
     "ansible" # temporarily while broken see NixOS/nixpkgs#400373
     "winetricks" # wine baby
     "mas" # search and install apps from the macOS App Store
+    "tree-sitter-cli" # ties into nvim
   ];
 
   homebrew.casks = mkIf isDarwin [
