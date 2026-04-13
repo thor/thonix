@@ -32,7 +32,7 @@ let
     # nix
     nix-search-cli # better search
     nixd # beautiful linking
-    nixfmt-rfc-style # formatting for nixd
+    nixfmt # formatting for nixd
     nix-index # local database
   ];
   development =
