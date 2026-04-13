@@ -12,7 +12,8 @@ mkIf isDarwin {
   homebrew.brews = [
     "podman"
     "podman-compose"
-    "krunkit"
+    "slp/krunkit/krunkit" # NOTE: should not be necessary, but alas it is for podman
+    # "slp/krunkit/libkrun-efi" # NOTE: should not be necessary, but alas it is for padman
   ];
 
   homebrew.casks = [

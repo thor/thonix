@@ -59,7 +59,6 @@
   ];
   homebrew.casks = [
     "linear-linear"
-    "podman-desktop"
     # it's llm o'clock
     "cursor"
     "cursor-cli"
