@@ -135,6 +135,8 @@ in
     "obsidian" # notes to replace dendron
     "signal" # chats
     "rescuetime" # tracking my own time usage (and productivity)
+    "antinote" # delightful little temporary note app
+    "qlmarkdown" # markdown previews
   ];
 
   homebrew.masApps = mkIf isDarwin {

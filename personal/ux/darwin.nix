@@ -7,8 +7,6 @@ lib.mkIf isDarwin {
   homebrew.casks = [
     # make mice scroll "normally" instead of "naturally"
     "scroll-reverser"
-    # delightful little temporary note app
-    "antinote"
     # support a little stack thing
     "hammerspoon"
     # hide the notch
