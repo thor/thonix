@@ -16,7 +16,9 @@ let
     fd # file finder
     parallel # run in parallel
     ripgrep # fast searcher
+    # neovim and friends
     neovim # the best vim
+    luarocks # deps for neovim lua packages
     vscode # visual goto
     tmux # screen replacement
     # web and stuff
