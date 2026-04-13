@@ -125,7 +125,6 @@ in
     "cmux" # native tmux based on libghostty
     "google-chrome" # browser most of the time
     "todoist-app" # tasks
-    "chatgpt" # just another llm
     "anki" # how to learn
     "wifiman" # handy to get home
     "remarkable" # access to the tablet

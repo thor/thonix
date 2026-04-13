@@ -22,6 +22,11 @@ in
   ];
 
   homebrew.casks = mkIf isDarwin [
-    "antigravity"
+    "chatgpt" # just another llm
+    "antigravity" # google-esque cursor alternative, so-so
+  ];
+
+  homebrew.brews = mkIf isDarwin [
+    "rtk" # reduce token usage
   ];
 }
