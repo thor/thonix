@@ -42,15 +42,4 @@ in
       RunAtLoad = true;
     };
   };
-
-  # system.activationScripts.postActivation.text = lib.mkIf isDarwin (
-  #   lib.mkAfter ''
-  #     ADDR_FILE="${userAddressesConf}"
-  #     ${pkgs.coreutils}/bin/install -d -o ${primary} -g staff "$(dirname "$ADDR_FILE")"
-  #     if [ ! -f "$ADDR_FILE" ]; then
-  #       printf '%s\n' '# address=/example.dev/127.0.0.1' > "$ADDR_FILE"
-  #       ${pkgs.coreutils}/bin/chown ${primary}:staff "$ADDR_FILE"
-  #     fi
-  #   ''
-  # );
 }
