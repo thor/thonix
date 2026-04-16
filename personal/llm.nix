@@ -24,6 +24,7 @@ in
   homebrew.casks = mkIf isDarwin [
     "chatgpt" # just another llm
     "antigravity" # google-esque cursor alternative, so-so
+    "claude-code@latest" # claude code
   ];
 
   homebrew.brews = mkIf isDarwin [
