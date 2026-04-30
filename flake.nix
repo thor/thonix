@@ -12,6 +12,9 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
+    # got to track systems, too
+    systems.url = "github:nix-systems/default";
+
     # rust
     fenix = {
       url = "github:nix-community/fenix";
