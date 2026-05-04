@@ -36,6 +36,8 @@ let
     nixd # beautiful linking
     nixfmt # formatting for nixd
     nix-index # local database
+    # fun
+    josm
   ];
   development =
     with pkgs;
