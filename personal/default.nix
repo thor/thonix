@@ -129,7 +129,6 @@ in
     "todoist-app" # tasks
     "anki" # how to learn
     "wifiman" # handy to get home
-    "remarkable" # access to the tablet
     "nordvpn" # it is what it is
     "parallels" # virtual machines
     "wine@staging" # wine baby
@@ -147,6 +146,8 @@ in
     "Bitwarden" = 1352778147;
     # networking
     "Wireguard" = 1451685025;
+    # productivity and stuff
+    "reMarkable desktop" = 1276493162;
   };
 
   imports = [
