@@ -4,9 +4,11 @@ let
   inherit (pkgs.stdenv) isDarwin;
 in
 {
-  environment.systemPackages = [
-    pkgs.ollama # local models
-    pkgs.gemini-cli # open source cli with gemini access and mcp
+  environment.systemPackages = with pkgs; [
+    ollama # local models
+    opencode # local agentic approach
+    gemini-cli # open source cli with gemini access and mcp
+    herdr # llm multiplexer
   ];
 
   homebrew.casks = mkIf isDarwin [

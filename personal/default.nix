@@ -20,6 +20,8 @@ let
     neovim # the best vim
     luarocks # deps for neovim lua packages
     vscode # visual goto
+    # multiplex and similarly
+    # note: see ./llm.nix for herdr et al.
     tmux # screen replacement
     # web and stuff
     httpie
@@ -39,6 +41,7 @@ let
     # fun
     josm
   ];
+
   development =
     with pkgs;
     [
@@ -75,6 +78,7 @@ let
     ++ [
       jj-spr # jujutsu: stacked PRs for GitHub
     ];
+
   docs = [
     tex
   ];
