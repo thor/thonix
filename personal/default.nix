@@ -152,6 +152,8 @@ in
     "Wireguard" = 1451685025;
     # productivity and stuff
     "reMarkable desktop" = 1276493162;
+    # time tracking is useful
+    "Toggl Track" = 1291898086;
   };
 
   imports = [
