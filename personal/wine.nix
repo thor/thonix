@@ -5,6 +5,9 @@
     taps = {
       "Sikarugir-App/homebrew-sikarugir" = inputs.sikarugir;
     };
+    trust = {
+      taps = [ "slp/krunkit" ];
+    };
   };
 
   # brew casks
