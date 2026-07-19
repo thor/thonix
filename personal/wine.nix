@@ -6,7 +6,10 @@
       "Sikarugir-App/homebrew-sikarugir" = inputs.sikarugir;
     };
     trust = {
-      taps = [ "slp/krunkit" ];
+      taps = [
+        "slp/krunkit"
+        "Sikarugir-App/sikarugir"
+      ];
     };
   };
 

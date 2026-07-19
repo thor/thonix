@@ -58,7 +58,7 @@
     "mcpm" # attempt at handling multiple mcps
   ];
   homebrew.casks = [
-    "linear-linear"
+    "linear"
     # it's llm o'clock
     "cursor"
     "cursor-cli"
