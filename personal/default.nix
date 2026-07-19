@@ -93,9 +93,11 @@ let
 
   # Add a custom tex package
   tex = (
-    pkgs.texlive.combine {
-      inherit (pkgs.texlive)
-        scheme-medium
+    pkgs.texliveSmall.withPackages (
+      ps: with ps; [
+        texdoc # recommended package to navigate the documentation
+        cm-super
+        cm-super.texdoc # documentation of cm-super
         dvisvgm
         dvipng # for preview and export as html
         wrapfig
@@ -103,10 +105,10 @@ let
         ulem
         hyperref
         capt-of
-        ;
-      #(setq org-latex-compiler "lualatex")
-      #(setq org-preview-latex-default-process 'dvisvgm)
-    }
+        #(setq org-latex-compiler "lualatex")
+        #(setq org-preview-latex-default-process 'dvisvgm)
+      ]
+    )
   );
 in
 {
@@ -133,10 +135,9 @@ in
     "todoist-app" # tasks
     "anki" # how to learn
     "wifiman" # handy to get home
-    "nordvpn" # it is what it is
+    # TODO: nordvpn disabled as the cask doesn't currently work
+    # "nordvpn" # it is what it is
     "parallels" # virtual machines
-    "wine@staging" # wine baby
-    "gstreamer-runtime" # wine dependency that doesn't bubble up
     "steam" # some entertainment, yeah?
     "calibre" # books god damn
     "obsidian" # notes to replace dendron
