@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     # gcc # added because a rust component needed it
     rustup
-    # TODO: disable once https://github.com/nix-community/fenix/pull/202/files is merged
-    # rust-analyzer-nightly
+    rust-analyzer-nightly
   ];
 }
