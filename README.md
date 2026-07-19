@@ -24,3 +24,41 @@ popd
 sudo ln -s $HOME/.config/thonix /etc/nix-darwin
 darwin-rebuild switch
 ```
+
+## Useful commands
+
+Build without activating, to test that it builds:
+
+```sh
+darwin-rebuild build --flake .#<hostname>
+```
+
+Just check it evaluates, no build:
+
+```sh
+darwin-rebuild build --flake .#<hostname> --dry-run
+```
+
+Build a single package:
+
+```sh
+nix build nixpkgs#<package>
+```
+
+Repair a store path whose contents got corrupted or edited (rebuilding will not fix this on its own):
+
+```sh
+sudo nix store repair /nix/store/<hash>-<name>
+```
+
+Verify and repair the whole store:
+
+```sh
+sudo nix store verify --all --repair
+```
+
+Update flake inputs:
+
+```sh
+nix flake update
+```
