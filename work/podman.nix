@@ -12,8 +12,7 @@ mkIf isDarwin {
   homebrew.brews = [
     "podman"
     "podman-compose"
-    "slp/krunkit/krunkit" # NOTE: should not be necessary, but alas it is for podman
-    # "slp/krunkit/libkrun-efi" # NOTE: should not be necessary, but alas it is for padman
+    "slp/krun/krunkit" # NOTE: should not be necessary, but alas it is for podman
   ];
 
   homebrew.casks = [
@@ -22,7 +21,12 @@ mkIf isDarwin {
 
   nix-homebrew = {
     taps = {
-      "slp/homebrew-krunkit" = inputs.krunkit;
+      "slp/homebrew-krun" = inputs.krun;
+    };
+    trust = {
+      taps = [
+        "slp/krun"
+      ];
     };
   };
 }

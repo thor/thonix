@@ -39,8 +39,8 @@
       url = "github:Sikarugir-App/homebrew-sikarugir";
       flake = false;
     };
-    krunkit = {
-      url = "github:slp/homebrew-krunkit";
+    krun = {
+      url = "github:slp/homebrew-krun";
       flake = false;
     };
 

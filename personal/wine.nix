@@ -7,7 +7,6 @@
     };
     trust = {
       taps = [
-        "slp/krunkit"
         "Sikarugir-App/sikarugir"
       ];
     };
