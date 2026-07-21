@@ -13,6 +13,7 @@ mkIf isDarwin {
     "podman"
     "podman-compose"
     "slp/krun/krunkit" # NOTE: should not be necessary, but alas it is for podman
+    "slp/krun/virglrenderer" # NOTE: should not be necessary, but alas it is for podman
   ];
 
   homebrew.casks = [

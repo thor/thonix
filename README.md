@@ -62,3 +62,23 @@ Update flake inputs:
 ```sh
 nix flake update
 ```
+
+## Known issues
+
+### Homebrew tap trust is written to the wrong store
+
+`nix-homebrew` trusts non-official taps (`nix-homebrew.trust`) during activation.
+Those `brew trust` calls run under `sudo`, which strips `XDG_CONFIG_HOME` from the
+environment, so trust is written to `~/.homebrew/trust.json`. An interactive shell
+sets `XDG_CONFIG_HOME`, so `brew` there reads `~/.config/homebrew/trust.json`
+instead. The two stores diverge: taps trusted by activation appear untrusted in the
+terminal.
+
+Harmless today, since trust is only enforced when `HOMEBREW_REQUIRE_TAP_TRUST` is
+set — but newer Homebrew enforces it by default, at which point the terminal `brew`
+will refuse taps that activation did trust.
+
+Suggested fix: pin `XDG_CONFIG_HOME` at the command level for both the
+`nix-homebrew` trust calls and the `nix-darwin` `brew bundle` call, so activation
+and interactive shells share a single trust store (likely an upstream change to
+`nix-homebrew`).
