@@ -31,6 +31,7 @@ let
     # all about the theming
     tinty
     sheldon # source and fetch zsh plugins
+    starship # it's neat
     # archives
     keka
     # nix
