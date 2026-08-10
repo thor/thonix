@@ -3,9 +3,6 @@ let
   inherit (lib) mkIf;
   inherit (pkgs.stdenv) isDarwin;
 
-  # Custom packages
-  jj-spr = import ../packages/jj-spr.nix { inherit pkgs lib; };
-
   corePackages = with pkgs; [
     # core utilities
     bat # bats are better than cats
@@ -75,9 +72,6 @@ let
       lazygit # tui for git
       # network and fun
       cloudflared
-    ]
-    ++ [
-      jj-spr # jujutsu: stacked PRs for GitHub
     ];
 
   docs = [
