@@ -55,6 +55,7 @@ in
     "chatgpt" # just another llm
     "antigravity" # google-esque cursor alternative, so-so
     "claude-code@latest" # claude code
+    "lm-studio" # me likey mlx without ollama, too
   ];
 
   homebrew.brews = mkIf isDarwin [
