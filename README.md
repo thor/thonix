@@ -63,6 +63,35 @@ Update flake inputs:
 nix flake update
 ```
 
+### Pruning
+
+Every `switch` leaves a generation behind, and each one pins its whole closure
+in the store. Review them:
+
+```sh
+nix profile history --profile /nix/var/nix/profiles/system
+```
+
+Drop the ones older than 30 days, then free what nothing references anymore:
+
+```sh
+sudo nix profile wipe-history --older-than 30d --profile /nix/var/nix/profiles/system
+nix profile wipe-history --older-than 30d
+sudo nix store gc
+```
+
+`wipe-history` only prunes by age. To keep a fixed number of generations
+instead, fall back to the legacy command:
+
+```sh
+sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +5
+nix-env --delete-generations +5
+```
+
+`./result` is a garbage collection root, so delete it first or its whole system
+build survives. `nix-store --gc --print-roots` shows what else is pinning paths,
+and `sudo nix store optimise` hardlinks duplicates to reclaim a little more.
+
 ## Known issues
 
 ### Homebrew tap trust is written to the wrong store
