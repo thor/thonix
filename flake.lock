@@ -157,6 +157,22 @@
         "type": "github"
       }
     },
+    "presspeech": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788286762,
+        "narHash": "sha256-bO+2SVU6gvbzCf/pH5oDJgVpATEFiCnG/tQ13n1Dwxg=",
+        "owner": "rcourtman",
+        "repo": "homebrew-presspeech",
+        "rev": "d1cf3f387978d0fc3bb4b2aa20a0cda94177a32d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rcourtman",
+        "repo": "homebrew-presspeech",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "fenix": "fenix",
@@ -167,6 +183,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs",
+        "presspeech": "presspeech",
         "sikarugir": "sikarugir",
         "systems": "systems",
         "treefmt-nix": "treefmt-nix"

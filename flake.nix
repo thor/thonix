@@ -43,6 +43,10 @@
       url = "github:slp/homebrew-krun";
       flake = false;
     };
+    presspeech = {
+      url = "github:rcourtman/homebrew-presspeech";
+      flake = false;
+    };
 
   };
 

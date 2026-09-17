@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 let
   inherit (lib) mkIf;
   inherit (pkgs.stdenv) isDarwin;
@@ -56,7 +56,20 @@ in
     "antigravity" # google-esque cursor alternative, so-so
     "claude-code@latest" # claude code
     "lm-studio" # me likey mlx without ollama, too
+    "rcourtman/presspeech/presspeech" # one press dictation
   ];
+
+  # see homebrew.taps
+  nix-homebrew = mkIf isDarwin {
+    taps = {
+      "rcourtman/homebrew-presspeech" = inputs.presspeech;
+    };
+    trust = {
+      taps = [
+        "rcourtman/presspeech"
+      ];
+    };
+  };
 
   homebrew.brews = mkIf isDarwin [
     "rtk" # reduce token usage
