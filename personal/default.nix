@@ -137,6 +137,7 @@ in
     "rescuetime" # tracking my own time usage (and productivity)
     "antinote" # delightful little temporary note app
     "qlmarkdown" # markdown previews
+    "yojam" # rule-based browser selection
   ];
 
   homebrew.masApps = mkIf isDarwin {
