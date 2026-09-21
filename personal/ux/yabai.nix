@@ -63,8 +63,8 @@ in
       yabai -m space 3 --label com
       yabai -m space 4 --label mda
       yabai -m space 5 --label pri
-      yabai -m space 6 --label 6
-      yabai -m space 7 --label 7
+      yabai -m space 6 --label cal
+      yabai -m space 7 --label note
       yabai -m space 8 --label wrk
       yabai -m space 9 --label priv
 
@@ -79,9 +79,6 @@ in
       yabai -m rule --add app='Ghostty' manage=off
       ## password manager pop-up
       yabai -m rule --add role='AXWindow' app='Google.*Chrome' title='Bitwarden.*' manage=off label=bitwarden
-
-      # gaps
-      yabai -m space --padding 5
 
       # mouse interaction mode
       yabai -m config mouse_modifier alt
