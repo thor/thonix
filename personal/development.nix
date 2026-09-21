@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
   primary = config.system.primaryUser;
   # Editable overrides: dnsmasq format, one entry per line, e.g. address=/my.dev/127.0.0.1
   userAddressesConf = "/Users/${primary}/.config/dnsmasq/dev-adresses.conf";

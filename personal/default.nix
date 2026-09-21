@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 let
   inherit (lib) mkIf;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 
   corePackages = with pkgs; [
     # core utilities

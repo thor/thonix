@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, ... }:
 let
   inherit (lib) mkIf;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 {
   # Build yabai from ImTheSquid's fork, which carries the scripting-addition
@@ -12,7 +12,7 @@ in
   nixpkgs.overlays = [
     (
       final: prev:
-      if !prev.stdenv.isDarwin then
+      if !prev.stdenv.hostPlatform.isDarwin then
         { }
       else
         {

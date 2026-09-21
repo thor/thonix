@@ -6,7 +6,7 @@
 }:
 let
   inherit (lib) mkIf;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 {
   # herdr vendors libghostty-vt (a Zig library) whose build calls
@@ -20,7 +20,7 @@ in
     # Use `prev.*` or plain Nix `if` expressions instead.
     (
       final: prev:
-      if !prev.stdenv.isDarwin then
+      if !prev.stdenv.hostPlatform.isDarwin then
         { }
       else
         let

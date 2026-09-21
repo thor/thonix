@@ -6,7 +6,7 @@
 }:
 let
   inherit (lib) mkIf;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 mkIf isDarwin {
   homebrew.brews = [
