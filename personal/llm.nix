@@ -1,4 +1,9 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 let
   inherit (lib) mkIf;
   inherit (pkgs.stdenv) isDarwin;
@@ -13,8 +18,10 @@ in
     # Do not use module-level `lib` inside this closure — it goes through
     # _module.args.lib → pkgs.lib → overlays, creating infinite recursion.
     # Use `prev.*` or plain Nix `if` expressions instead.
-    (final: prev:
-      if !prev.stdenv.isDarwin then { }
+    (
+      final: prev:
+      if !prev.stdenv.isDarwin then
+        { }
       else
         let
           sdkRoot = "${final.apple-sdk}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk";
@@ -38,7 +45,11 @@ in
         in
         {
           herdr = prev.herdr.overrideAttrs (old: {
-            nativeBuildInputs = old.nativeBuildInputs ++ [ final.apple-sdk final.darwin.cctools xcodeShims ];
+            nativeBuildInputs = old.nativeBuildInputs ++ [
+              final.apple-sdk
+              final.darwin.cctools
+              xcodeShims
+            ];
           });
         }
     )

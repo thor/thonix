@@ -40,39 +40,37 @@ let
     josm
   ];
 
-  development =
-    with pkgs;
-    [
-      # not really development, but ansible will do, too
-      # Disabled due to NixOS/nixpkgs#400373
-      # ansible
-      # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
-      cmake
-      protobuf # protobuf
-      watch # not the best, but need it
-      # environments and stuff
-      direnv
-      # whether nix or not, use mise for projects where non-nixers exist
-      mise
-      # js
-      nodejs
-      pnpm
-      # python
-      python3 # don't pretend python 2 is getting anywhere near close
-      uv
-      # go
-      go
-      # git and stuff
-      git # source control
-      jujutsu # source control, but different
-      gnupg # signature verifications
-      watchman # jujutsu: helpful file monitor
-      jjui # delicious
-      gh # github
-      lazygit # tui for git
-      # network and fun
-      cloudflared
-    ];
+  development = with pkgs; [
+    # not really development, but ansible will do, too
+    # Disabled due to NixOS/nixpkgs#400373
+    # ansible
+    # NOTE: this isn't the nix way, but I'm not handling nvim with nix quite yet
+    cmake
+    protobuf # protobuf
+    watch # not the best, but need it
+    # environments and stuff
+    direnv
+    # whether nix or not, use mise for projects where non-nixers exist
+    mise
+    # js
+    nodejs
+    pnpm
+    # python
+    python3 # don't pretend python 2 is getting anywhere near close
+    uv
+    # go
+    go
+    # git and stuff
+    git # source control
+    jujutsu # source control, but different
+    gnupg # signature verifications
+    watchman # jujutsu: helpful file monitor
+    jjui # delicious
+    gh # github
+    lazygit # tui for git
+    # network and fun
+    cloudflared
+  ];
 
   docs = [
     tex
