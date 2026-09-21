@@ -14,7 +14,16 @@
     onActivation.cleanup = "zap";
 
     # interoperability with nix-homebrew
-    taps = builtins.attrNames config.nix-homebrew.taps;
+    #
+    # `trusted = true` is required for any tap whose formulae/casks are
+    # referenced by bare name (not "tap/name") elsewhere, since Homebrew can
+    # only derive persistent trust for a bare-named item from its tap being
+    # trusted. Marking official taps trusted is a documented no-op, so this
+    # is safe to apply to all of them.
+    taps = map (name: {
+      inherit name;
+      trusted = true;
+    }) (builtins.attrNames config.nix-homebrew.taps);
 
     # casks are configured elsewhere
   };

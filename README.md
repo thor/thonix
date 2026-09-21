@@ -103,11 +103,20 @@ sets `XDG_CONFIG_HOME`, so `brew` there reads `~/.config/homebrew/trust.json`
 instead. The two stores diverge: taps trusted by activation appear untrusted in the
 terminal.
 
-Harmless today, since trust is only enforced when `HOMEBREW_REQUIRE_TAP_TRUST` is
-set — but newer Homebrew enforces it by default, at which point the terminal `brew`
-will refuse taps that activation did trust.
+`HOMEBREW_REQUIRE_TAP_TRUST` is on by default, which breaks builds. Also,
+`brew bundle install --force-cleanup` (triggered by
+`homebrew.onActivation.cleanup = "zap"`) wipes and rebuilds the whole trust store
+from the current Brewfile on every activation. So anything `nix-homebrew.trust.taps`
+sets gets thrown away before the next `brew cleanup` runs, no matter the store
+mismatch above.
 
-Suggested fix: pin `XDG_CONFIG_HOME` at the command level for both the
-`nix-homebrew` trust calls and the `nix-darwin` `brew bundle` call, so activation
-and interactive shells share a single trust store (likely an upstream change to
-`nix-homebrew`).
+The workaround (for now) is to mark the tap itself `trusted = true` in
+`homebrew.taps` (see `personal/brew.nix`), instead of using
+`nix-homebrew.trust`. Homebrew can only keep trust for a bare-named formula or
+cask if its tap is trusted, and that gets rebuilt fresh from the Brewfile every
+run, so it survives the wipe.
+
+Note: using a fully qualified cask or brew name (`"user/tap/name"` instead of
+`"name"`) also survives the wipe, since its own `trusted: true` can be read
+directly. But that only covers the one item you named, not its dependencies, since
+those have no name in the Brewfile to qualify. Trusting the tap covers those too.
