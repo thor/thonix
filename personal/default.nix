@@ -148,6 +148,10 @@ in
     "reMarkable desktop" = 1276493162;
     # time tracking is useful
     "Toggl Track" = 1291898086;
+    # basic macOS apps
+    "Pages" = 361309726;
+    "Numbers" = 361304891;
+    "Keynote" = 361285480;
   };
 
   imports = [
