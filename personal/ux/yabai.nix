@@ -51,11 +51,11 @@ in
       yabai -m config window_opacity_duration 0.04
 
       # Set all padding and gaps to 20pt (default: 0)
-      yabai -m config window_gap     10
-      yabai -m config top_padding    10
-      yabai -m config bottom_padding 10
-      yabai -m config left_padding   10
-      yabai -m config right_padding  10
+      yabai -m config window_gap     5
+      yabai -m config top_padding    5
+      yabai -m config bottom_padding 5
+      yabai -m config left_padding   5
+      yabai -m config right_padding  5
 
       # labels
       yabai -m space 1 --label cmd
@@ -81,13 +81,13 @@ in
       yabai -m rule --add role='AXWindow' app='Google.*Chrome' title='Bitwarden.*' manage=off label=bitwarden
 
       # gaps
-      yabai -m space --padding 10
+      yabai -m space --padding 5
 
       # mouse interaction mode
       yabai -m config mouse_modifier alt
 
       # run jankyborders and configure it
-      borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on &
+      borders active_color=0xccff9500 inactive_color=0xff494d64 width=3.0 hidpi=on &
 
       # update raycast menubar
       yabai -m signal --add event=space_changed action="nohup open -g raycast://extensions/krzysztoff1/yabai/screens-menu-bar?launchType=background > /dev/null 2>&1 &"
