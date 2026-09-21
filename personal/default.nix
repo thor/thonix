@@ -128,8 +128,7 @@ in
     "todoist-app" # tasks
     "anki" # how to learn
     "wifiman" # handy to get home
-    # TODO: nordvpn disabled as the cask doesn't currently work
-    # "nordvpn" # it is what it is
+    "nordvpn" # it is what it is
     "parallels" # virtual machines
     "steam" # some entertainment, yeah?
     "calibre" # books god damn
