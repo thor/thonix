@@ -11,6 +11,7 @@ in
 
   imports = [
     ./darwin.nix
+    ./yabai.nix
   ];
 
 }

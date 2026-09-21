@@ -30,62 +30,6 @@ lib.mkIf isDarwin {
     serviceConfig.ProcessType = "Interactive";
   };
 
-  services.yabai = {
-    enable = true;
-    enableScriptingAddition = true;
-    extraConfig = ''
-      # load scripting additions
-      yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-      sudo yabai --load-sa
-
-      # managed, bsp, float
-      yabai -m config layout bsp
-      yabai -m config window_opacity_duration 0.04
-
-      # Set all padding and gaps to 20pt (default: 0)
-      yabai -m config window_gap     10
-      yabai -m config top_padding    10
-      yabai -m config bottom_padding 10
-      yabai -m config left_padding   10
-      yabai -m config right_padding  10
-
-      # labels
-      yabai -m space 1 --label cmd
-      yabai -m space 2 --label web
-      yabai -m space 3 --label com
-      yabai -m space 4 --label mda
-      yabai -m space 5 --label pri
-      yabai -m space 6 --label 6
-      yabai -m space 7 --label 7
-      yabai -m space 8 --label wrk
-      yabai -m space 9 --label priv
-
-      # disable things
-      ## not possible to resize properly
-      yabai -m rule --add app='System..innstillinger' manage=off
-      ## annoying to resize a vm
-      yabai -m rule --add app='Parallels Desktop' manage=off
-      ## tiny note stickers should be over 'em all
-      yabai -m rule --add app='Antinote' manage=off
-      ## native tabs only
-      yabai -m rule --add app='Ghostty' manage=off
-      ## password manager pop-up
-      yabai -m rule --add role='AXWindow' app='Google.*Chrome' title='Bitwarden.*' manage=off label=bitwarden
-
-      # gaps
-      yabai -m space --padding 10
-
-      # mouse interaction mode
-      yabai -m config mouse_modifier alt
-
-      # run jankyborders and configure it
-      borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 hidpi=on &
-
-      # update raycast menubar
-      yabai -m signal --add event=space_changed action="nohup open -g raycast://extensions/krzysztoff1/yabai/screens-menu-bar?launchType=background > /dev/null 2>&1 &"
-    '';
-  };
-
   services.skhd = {
     enable = true;
     skhdConfig = ''
