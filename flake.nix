@@ -47,6 +47,10 @@
       url = "github:rcourtman/homebrew-presspeech";
       flake = false;
     };
+    brew-jackielii = {
+      url = "github:jackielii/homebrew-tap";
+      flake = false;
+    };
 
   };
 

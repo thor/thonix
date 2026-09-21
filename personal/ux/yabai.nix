@@ -90,4 +90,18 @@ in
       yabai -m signal --add event=space_changed action="nohup open -g raycast://extensions/krzysztoff1/yabai/screens-menu-bar?launchType=background > /dev/null 2>&1 &"
     '';
   };
+
+  # see homebrew.taps
+  nix-homebrew = mkIf isDarwin {
+    taps = {
+      "jackielii/homebrew-tap" = inputs.brew-jackielii;
+    };
+    trust = {
+      taps = [
+        "jackielii/tap"
+      ];
+    };
+  };
+
+  homebrew.casks = [ "jackielii/tap/skhd-zig" ];
 }
